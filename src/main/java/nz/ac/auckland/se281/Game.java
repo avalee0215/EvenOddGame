@@ -52,7 +52,10 @@ public class Game {
     if (level instanceof Hard) {
       ((Hard) level)
           .currentState(
-              countRound, loserOrWin); // Needed data; current round, did the system lose or win
+              countRound,
+              userChoiceString,
+              loserOrWin); // Update the needed data. This time, include the boolean value
+      ((Hard) level).countOddEven(countOdd, countEven);
     }
 
     String countNewGameString = String.valueOf(countRound); // Change integer to string
