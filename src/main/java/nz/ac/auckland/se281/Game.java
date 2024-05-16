@@ -42,6 +42,7 @@ public class Game {
   }
 
   public void play() {
+    // Error message: new_game has not been typed
     if (countRound == -1) {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
@@ -134,7 +135,19 @@ public class Game {
     }
   }
 
-  public void endGame() {}
+  public void endGame() {
+    // Error message: new_game has not been typed
+    if (countRound == -1) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
+  }
 
-  public void showStats() {}
+  public void showStats() {
+    // Error message: new_game has not been typed
+    if (countRound == -1) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
+  }
 }
