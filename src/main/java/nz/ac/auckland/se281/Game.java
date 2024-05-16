@@ -42,6 +42,7 @@ public class Game {
               countRound,
               userChoiceString); // Update the current round and the choice of user(ODD or EVEN)
       // when the level is medium
+      ((Medium) level).countOddEven(countOdd, countEven);
     }
 
     String countNewGameString = String.valueOf(countRound); // Change integer to string
