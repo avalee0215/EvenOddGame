@@ -8,10 +8,22 @@ public class Game {
   // Count how many times the newGame is involked
   private int countRound = 0;
   private String userName = null;
+  private GameLevel level;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
     userName = options[0];
+    switch (difficulty) {
+      case EASY:
+        level = new Easy();
+        break;
+      case MEDIUM:
+        level = new Easy(); // Will change to Medium when the medium class is created
+        break;
+      case HARD:
+        level = new Easy(); // Will change to Hard when the hard class is created
+        break;
+    }
     MessageCli.WELCOME_PLAYER.printMessage(options[0]); // Task 1 Testing 1: Welcome_message
   }
 
@@ -23,6 +35,7 @@ public class Game {
     // Task 1 Testing 3: ask for input
     boolean rightInput = true;
     String inputValue = null;
+
     while (rightInput) {
       MessageCli.ASK_INPUT.printMessage(); // print out the message to ask input
       String input = Utils.scanner.nextLine(); // scan input
@@ -35,6 +48,7 @@ public class Game {
       }
     }
     MessageCli.PRINT_INFO_HAND.printMessage(userName, inputValue);
+    MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", level.play());
   }
 
   public void endGame() {}
