@@ -95,6 +95,7 @@ public class Game {
             String.valueOf(sum),
             "EVEN",
             userName); // when both sum and user choosed value is even, the winner is the user
+        loserOrWin = true; // system lose
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(
             String.valueOf(sum),
@@ -108,6 +109,7 @@ public class Game {
             String.valueOf(sum),
             "ODD",
             userName); // when both sum and user choosed value is odd, the winner is the user
+        loserOrWin = true; // system lose
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(
             String.valueOf(sum),
