@@ -7,10 +7,12 @@ import nz.ac.auckland.se281.Main.Difficulty;
 public class Game {
   // Count how many times the newGame is involked
   private int countNewGame = 0;
+  private String userName = null;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
     countNewGame++; // when the new game is clicked, the countnewgame will increase
+    userName = options[0];
     MessageCli.WELCOME_PLAYER.printMessage(options[0]); // Task 1 Testing 1: Welcome_message
   }
 
@@ -19,10 +21,10 @@ public class Game {
     String countNewGameString = String.valueOf(countNewGame); // Change integer to string
     MessageCli.START_ROUND.printMessage(countNewGameString); // print the message
     // Task 1 Testing 3: ask for input
-    MessageCli.ASK_INPUT.printMessage(); // print out the message to ask input
     boolean rightInput = true;
     String inputValue = null;
     while (rightInput) {
+      MessageCli.ASK_INPUT.printMessage(); // print out the message to ask input
       String input = Utils.scanner.nextLine(); // scan input
       int inputInt = Integer.parseInt(input); // convert to int to check it is between 0 to 5
       if (inputInt < 0 || inputInt > 5) {
@@ -32,6 +34,7 @@ public class Game {
         rightInput = false;
       }
     }
+    MessageCli.PRINT_INFO_HAND.printMessage(userName, inputValue);
   }
 
   public void endGame() {}
