@@ -14,7 +14,11 @@ public class Game {
     MessageCli.WELCOME_PLAYER.printMessage(options[0]); // Task 1 Testing 1: Welcome_message
   }
 
-  public void play() {}
+  public void play() {
+    // Task 1 Testing 2: Play command
+    String countNewGameString = String.valueOf(countNewGame); // Change integer to string
+    MessageCli.START_ROUND.printMessage(countNewGameString); // print the message
+  }
 
   public void endGame() {}
 
