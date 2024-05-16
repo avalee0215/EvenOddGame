@@ -6,6 +6,17 @@ public class TopStrategy implements Strategies {
 
   @Override
   public int randomNumber() {
+    if (oddorEven == "ODD") {
+      // To win, the sum should be even
+      if (userChoice == "ODD") {
+        return Utils
+            .getRandomOddNumber(); // odd + odd  = even. Therefore, the random number should be odd
+      } else {
+        // To win, the sum should be odd
+        return Utils
+            .getRandomEvenNumber(); // odd + even = odd. So, the random number should be even
+      }
+    }
     return 0;
   }
 
