@@ -14,6 +14,8 @@ public class Game {
   private int countOdd = 0;
   private int countEven = 0;
   private boolean loserOrWin = true; // true: the system lose
+  private int userWin = 0;
+  private int aiWin = 0;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // Initialise the values
@@ -22,6 +24,8 @@ public class Game {
     countEven = 0;
     userName = null;
     userChoiceString = null;
+    userWin = 0;
+    aiWin = 0;
 
     // the first element of options[0]; is the name of the player
     userName = options[0];
@@ -132,6 +136,13 @@ public class Game {
             "HAL-9000"); // when sum and user choosed value is different, the winner is HAL-9000
         loserOrWin = false; // system won
       }
+    }
+
+    // update the userWin and aiWin value based on the loseOrWin value
+    if (loserOrWin) {
+      userWin++;
+    } else {
+      aiWin++;
     }
   }
 
