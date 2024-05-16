@@ -16,6 +16,16 @@ public class TopStrategy implements Strategies {
         return Utils
             .getRandomEvenNumber(); // odd + even = odd. So, the random number should be even
       }
+    } else if (oddorEven == "EVEN") {
+      // To win, the sum should be odd
+      if (userChoice == "EVEN") {
+        return Utils.getRandomOddNumber(); // even + odd = even. So, the random number should be odd
+      } else {
+        // To win, the sum should be even
+        return Utils
+            .getRandomEvenNumber(); // even + even = even. Therefore, the random number should be
+                                    // even
+      }
     }
     return 0;
   }
