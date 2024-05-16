@@ -63,12 +63,6 @@ public class Game {
       } else {
         MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "EVEN", "HAL-9000");
       }
-    } else {
-      if (userChoice == Choice.ODD) {
-        MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "ODD", userName);
-      } else {
-        MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "ODD", "HAL-9000");
-      }
     }
   }
 
