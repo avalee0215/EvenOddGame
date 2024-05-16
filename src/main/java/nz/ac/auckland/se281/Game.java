@@ -6,7 +6,7 @@ import nz.ac.auckland.se281.Main.Difficulty;
 /** This class represents the Game is the main entry point. */
 public class Game {
   // Count how many times the newGame is involked
-  private int countRound = -1;
+  private int countRound = -1; // when the new_game has never typed, the value is -1
   private String userName = null;
   private String userChoiceString;
   private GameLevel level;
@@ -20,6 +20,8 @@ public class Game {
     countRound = 0;
     countOdd = 0;
     countEven = 0;
+    userName = null;
+    userChoiceString = null;
 
     // the first element of options[0]; is the name of the player
     userName = options[0];
