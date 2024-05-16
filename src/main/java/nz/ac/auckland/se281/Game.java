@@ -167,6 +167,15 @@ public class Game {
     } else {
       MessageCli.PRINT_END_GAME_TIE.printMessage();
     }
+
+    // Initialise the values
+    countRound = -1;
+    countOdd = 0;
+    countEven = 0;
+    userName = null;
+    userChoiceString = null;
+    userWin = 0;
+    aiWin = 0;
   }
 
   public void showStats() {
