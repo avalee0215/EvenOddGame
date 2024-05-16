@@ -160,5 +160,11 @@ public class Game {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
     }
+
+    // print out the stats messages
+    MessageCli.PRINT_PLAYER_WINS.printMessage(
+        userName, String.valueOf(userWin), String.valueOf(aiWin));
+    MessageCli.PRINT_PLAYER_WINS.printMessage(
+        "HAL-9000", String.valueOf(aiWin), String.valueOf(userWin));
   }
 }
