@@ -2,7 +2,7 @@ package nz.ac.auckland.se281;
 
 /**
  * It represents a hard difficulty at the game level. Produce a random number. The number of current
- * rounds and the result of the previous round are important
+ * rounds and the result of the previous round are important.
  *
  * @author: Chaeeun Lee
  */
@@ -65,11 +65,11 @@ public class Hard implements GameLevel {
   }
 
   /**
-   * save current state values to use the appropriate method to produce the random number.
+   * Save current state values to use the appropriate method to produce the random number.
    *
-   * @param round : current round
-   * @param choice : what the user chose: odd or even
-   * @param change : the system lose or not at the previous game
+   * @param round : current round.
+   * @param choice : what the user chose: odd or even.
+   * @param change : the system lose or not at the previous game.
    */
   public void currentState(int round, String choice, boolean change) {
     this.currentRound = round;
@@ -78,10 +78,10 @@ public class Hard implements GameLevel {
   }
 
   /**
-   * save the numbers that count how many times the user typed each type of number
+   * Save the numbers that count how many times the user typed each type of number.
    *
-   * @param odd : odd number count
-   * @param even : even number count
+   * @param odd : odd number count.
+   * @param even : even number count.
    */
   public void countOddEven(int odd, int even) {
     this.countOdd = odd;

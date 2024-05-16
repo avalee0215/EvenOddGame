@@ -35,10 +35,10 @@ public class Medium implements GameLevel {
   }
 
   /**
-   * save current state values to use the appropriate method to produce the random number.
+   * Save current state values to use the appropriate method to produce the random number.
    *
-   * @param round : current round
-   * @param choice : what the user chose: odd or even
+   * @param round : current round.
+   * @param choice : what the user chose: odd or even.
    */
   public void currentState(int round, String choice) {
     this.currentRound = round;
@@ -46,10 +46,10 @@ public class Medium implements GameLevel {
   }
 
   /**
-   * save the numbers that count how many times the user typed each type of number
+   * Save the numbers that count how many times the user typed each type of number.
    *
-   * @param odd : odd number count
-   * @param even : even number count
+   * @param odd : odd number count.
+   * @param even : even number count.
    */
   public void countOddEven(int odd, int even) {
     this.countOdd = odd;

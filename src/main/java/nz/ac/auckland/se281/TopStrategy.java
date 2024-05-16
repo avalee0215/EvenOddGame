@@ -1,7 +1,7 @@
 package nz.ac.auckland.se281;
 
 /**
- * Represents a Top Strategy mode of Strategies. It will produce a number based on the situation
+ * Represents a Top Strategy mode of Strategies. It will produce a number based on the situation.
  *
  * @author Chaeeun Lee
  */
@@ -11,7 +11,7 @@ public class TopStrategy implements Strategies {
 
   /**
    * Based on what kind of number the user used more and what the user chose as an answer, the type
-   * (odd or even) of the random number that is produced will be different
+   * (odd or even) of the random number that is produced will be different.
    */
   @Override
   public int randomNumber() {
@@ -38,7 +38,7 @@ public class TopStrategy implements Strategies {
     }
   }
 
-  /** Check what type of number is more frequently used by the user (odd or even) */
+  /** Check what type of number is more frequently used by the user (odd or even). */
   public String oddorEven(int odd, int even, String choice) {
     this.userChoice = choice;
     if (odd > even) {
