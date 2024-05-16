@@ -34,8 +34,21 @@ public class Hard implements GameLevel {
           this.mode = "random";
           return String.valueOf(randomNumber);
         }
+      } else {
+        // if the system won, keep the same method
+        if (mode == "random") {
+          strategy = new Random();
+          this.randomNumber = strategy.randomNumber();
+          this.mode = "random";
+          return String.valueOf(randomNumber);
+        } else {
+          strategy = new TopStrategy();
+          strategy.oddorEven(countOdd, countEven, userChoice); // Update the current values
+          this.mode = "Top";
+          this.randomNumber = strategy.randomNumber();
+          return String.valueOf(randomNumber);
+        }
       }
-      return null;
     }
   }
 
