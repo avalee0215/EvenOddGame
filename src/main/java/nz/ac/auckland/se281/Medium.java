@@ -6,9 +6,15 @@ public class Medium implements GameLevel {
   private String userChoice;
   private int countOdd;
   private int countEven;
+  private int randomNumber;
 
   @Override
   public String play() {
+    if (currentRound < 4) {
+      strategy = new Random();
+      this.randomNumber = strategy.randomNumber(); // First 3 rounds should use the random mode
+      return String.valueOf(randomNumber);
+    }
     return null;
   }
 
