@@ -13,6 +13,7 @@ public class Game {
   private Choice userChoice;
   private int countOdd = 0;
   private int countEven = 0;
+  private boolean loserOrWin = true; // true: the system lose
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
@@ -27,7 +28,7 @@ public class Game {
         level = new Medium(); // Switch to Medium
         break;
       case HARD:
-        level = new Easy(); // Will change to Hard when the hard class is created
+        level = new Hard(); // Swtich to Hard
         break;
     }
     MessageCli.WELCOME_PLAYER.printMessage(options[0]); // Task 1 Testing 1: Welcome_message
@@ -36,6 +37,8 @@ public class Game {
   public void play() {
     // Task 1 Testing 2: Play command
     countRound++; // when the new game is clicked, the countnewgame will increase
+
+    // if the chosen level is medium, upload the needed data
     if (level instanceof Medium) {
       ((Medium) level)
           .currentState(
@@ -43,6 +46,13 @@ public class Game {
               userChoiceString); // Update the current round and the choice of user(ODD or EVEN)
       // when the level is medium
       ((Medium) level).countOddEven(countOdd, countEven);
+    }
+
+    // if the chosen level is hard, upload the needed data
+    if (level instanceof Hard) {
+      ((Hard) level)
+          .currentState(
+              countRound, loserOrWin); // Needed data; current round, did the system lose or win
     }
 
     String countNewGameString = String.valueOf(countRound); // Change integer to string
@@ -90,6 +100,7 @@ public class Game {
             String.valueOf(sum),
             "EVEN",
             "HAL-9000"); // when sum and user choosed value is different, the winner is HAL-9000
+        loserOrWin = false; // system won
       }
     } else {
       if (userChoice == Choice.ODD) {
@@ -102,6 +113,7 @@ public class Game {
             String.valueOf(sum),
             "ODD",
             "HAL-9000"); // when sum and user choosed value is different, the winner is HAL-9000
+        loserOrWin = false; // system won
       }
     }
   }
