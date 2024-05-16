@@ -24,10 +24,14 @@ public class TopStrategy implements Strategies {
         // To win, the sum should be even
         return Utils
             .getRandomEvenNumber(); // even + even = even. Therefore, the random number should be
-                                    // even
+        // even
       }
+    } else {
+      return Utils.getRandomNumberRange(
+          0,
+          5); // when  the player has played an equal number of ODD and EVEN numbers, the AI will
+              // resort to a random selection between 0 and 5.
     }
-    return 0;
   }
 
   public String oddorEven(int odd, int even, String choice) {
