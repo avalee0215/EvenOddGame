@@ -14,8 +14,13 @@ public class Medium implements GameLevel {
       strategy = new Random();
       this.randomNumber = strategy.randomNumber(); // First 3 rounds should use the random mode
       return String.valueOf(randomNumber);
+    } else {
+      strategy = new TopStrategy();
+      strategy.oddorEven(countOdd, countEven, userChoice); // Update the current values
+      this.randomNumber = strategy.randomNumber();
+
+      return String.valueOf(randomNumber);
     }
-    return null;
   }
 
   public void currentState(int round, String choice) {
