@@ -16,6 +16,11 @@ public class Game {
   private boolean loserOrWin = true; // true: the system lose
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
+    // Initialise the values
+    countRound = 0;
+    countOdd = 0;
+    countEven = 0;
+
     // the first element of options[0]; is the name of the player
     userName = options[0];
     userChoice = choice;
