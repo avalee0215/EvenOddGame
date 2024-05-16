@@ -17,6 +17,14 @@ public class Game {
   private int userWin = 0;
   private int aiWin = 0;
 
+  /**
+   * This class save the information of the new game
+   *
+   * @param difficulty : Input value that the user choose the difficulty of game levels from easy,
+   *     medium, or hard
+   * @param choice : Input value that the user choose odd or even
+   * @param options : Input value showing the name of the user
+   */
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // Initialise the values
     countRound = 0;
@@ -45,6 +53,10 @@ public class Game {
     MessageCli.WELCOME_PLAYER.printMessage(options[0]); // Task 1 Testing 1: Welcome_message
   }
 
+  /**
+   * Plays the game based on the information from the new_game. User should type the value between 0
+   * and 5 A result of this round is printed out after the game
+   */
   public void play() {
     // Error message: new_game has not been typed
     if (countRound == -1) {
@@ -146,6 +158,7 @@ public class Game {
     }
   }
 
+  /** end the game by print the statistical value and the result (who wins) */
   public void endGame() {
     // Error message: new_game has not been typed
     if (countRound == -1) {
@@ -178,6 +191,7 @@ public class Game {
     aiWin = 0;
   }
 
+  /** Show the statistical values that show who wins and loses how many times */
   public void showStats() {
     // Error message: new_game has not been typed
     if (countRound == -1) {

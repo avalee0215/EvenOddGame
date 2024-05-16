@@ -1,9 +1,18 @@
 package nz.ac.auckland.se281;
 
+/**
+ * Represents a Top Strategy mode of Strategies. It will produce a number based on the situation
+ *
+ * @author Chaeeun Lee
+ */
 public class TopStrategy implements Strategies {
   private String oddorEven; // which numbers that the user used more? odd or even?
   private String userChoice; // user guessed type: odd or even
 
+  /**
+   * Based on what kind of number the user used more and what the user chose as an answer, the type
+   * (odd or even) of the random number that is produced will be different
+   */
   @Override
   public int randomNumber() {
     if (oddorEven == "ODD") {
@@ -22,18 +31,14 @@ public class TopStrategy implements Strategies {
         return Utils.getRandomOddNumber(); // even + odd = even. So, the random number should be odd
       } else {
         // To win, the sum should be even
-        return Utils
-            .getRandomEvenNumber(); // even + even = even. Therefore, the random number should be
-        // even
+        return Utils.getRandomEvenNumber(); // even + even = even. So, the random number is even
       }
     } else {
-      return Utils.getRandomNumberRange(
-          0,
-          5); // when  the player has played an equal number of ODD and EVEN numbers, the AI will
-              // resort to a random selection between 0 and 5.
+      return Utils.getRandomNumberRange(0, 5); // Same EVEN and ODD numbers will use the Random mode
     }
   }
 
+  /** Check what type of number is more frequently used by the user (odd or even) */
   public String oddorEven(int odd, int even, String choice) {
     this.userChoice = choice;
     if (odd > even) {
