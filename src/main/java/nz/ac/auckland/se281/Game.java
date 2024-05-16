@@ -20,8 +20,18 @@ public class Game {
     MessageCli.START_ROUND.printMessage(countNewGameString); // print the message
     // Task 1 Testing 3: ask for input
     MessageCli.ASK_INPUT.printMessage(); // print out the message to ask input
-    String input = Utils.scanner.nextLine(); // scan input
-    int inputInt = Integer.parseInt(input); // convert to int to check it is between 0 to 5
+    boolean rightInput = true;
+    String inputValue = null;
+    while (rightInput) {
+      String input = Utils.scanner.nextLine(); // scan input
+      int inputInt = Integer.parseInt(input); // convert to int to check it is between 0 to 5
+      if (inputInt < 0 || inputInt > 5) {
+        MessageCli.INVALID_INPUT.printMessage();
+      } else {
+        inputValue = input;
+        rightInput = false;
+      }
+    }
   }
 
   public void endGame() {}
