@@ -6,7 +6,7 @@ import nz.ac.auckland.se281.Main.Difficulty;
 /** This class represents the Game is the main entry point. */
 public class Game {
   // Count how many times the newGame is involked
-  private int countRound = 0;
+  private int countRound = -1;
   private String userName = null;
   private String userChoiceString;
   private GameLevel level;
@@ -40,6 +40,10 @@ public class Game {
   }
 
   public void play() {
+    if (countRound == -1) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
     // Task 1 Testing 2: Play command
     countRound++; // when the new game is clicked, the countnewgame will increase
 
