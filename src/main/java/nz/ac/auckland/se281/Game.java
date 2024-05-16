@@ -8,6 +8,7 @@ public class Game {
   // Count how many times the newGame is involked
   private int countRound = 0;
   private String userName = null;
+  private String userChoiceString;
   private GameLevel level;
   private Choice userChoice;
 
@@ -15,12 +16,13 @@ public class Game {
     // the first element of options[0]; is the name of the player
     userName = options[0];
     userChoice = choice;
+    userChoiceString = choice.name();
     switch (difficulty) {
       case EASY:
         level = new Easy();
         break;
       case MEDIUM:
-        level = new Easy(); // Will change to Medium when the medium class is created
+        level = new Medium(); // Switch to Medium
         break;
       case HARD:
         level = new Easy(); // Will change to Hard when the hard class is created
@@ -32,6 +34,14 @@ public class Game {
   public void play() {
     // Task 1 Testing 2: Play command
     countRound++; // when the new game is clicked, the countnewgame will increase
+    if (level instanceof Medium) {
+      ((Medium) level)
+          .currentState(
+              countRound,
+              userChoiceString); // Update the current round and the choice of user(ODD or EVEN)
+                                 // when the level is medium
+    }
+
     String countNewGameString = String.valueOf(countRound); // Change integer to string
     MessageCli.START_ROUND.printMessage(countNewGameString); // print the message
     // Task 1 Testing 3: ask for input
