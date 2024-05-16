@@ -56,12 +56,31 @@ public class Game {
     MessageCli.PRINT_INFO_HAND.printMessage(userName, inputValue);
     MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", aiNumberString);
 
-    int sum = aiNumberInt + inputInt;
+    int sum = aiNumberInt + inputInt; // sum of the user and the saved ai created values;
+    // if the sum is even, else is when the sum is odd
     if (sum % 2 == 0) {
       if (userChoice == Choice.EVEN) {
-        MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "EVEN", userName);
+        MessageCli.PRINT_OUTCOME_ROUND.printMessage(
+            String.valueOf(sum),
+            "EVEN",
+            userName); // when both sum and user choosed value is even, the winner is the user
       } else {
-        MessageCli.PRINT_OUTCOME_ROUND.printMessage(String.valueOf(sum), "EVEN", "HAL-9000");
+        MessageCli.PRINT_OUTCOME_ROUND.printMessage(
+            String.valueOf(sum),
+            "EVEN",
+            "HAL-9000"); // when sum and user choosed value is different, the winner is HAL-9000
+      }
+    } else {
+      if (userChoice == Choice.ODD) {
+        MessageCli.PRINT_OUTCOME_ROUND.printMessage(
+            String.valueOf(sum),
+            "ODD",
+            userName); // when both sum and user choosed value is odd, the winner is the user
+      } else {
+        MessageCli.PRINT_OUTCOME_ROUND.printMessage(
+            String.valueOf(sum),
+            "ODD",
+            "HAL-9000"); // when sum and user choosed value is different, the winner is HAL-9000
       }
     }
   }
