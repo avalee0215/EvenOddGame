@@ -11,6 +11,8 @@ public class Game {
   private String userChoiceString;
   private GameLevel level;
   private Choice userChoice;
+  private int countOdd = 0;
+  private int countEven = 0;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
@@ -39,7 +41,7 @@ public class Game {
           .currentState(
               countRound,
               userChoiceString); // Update the current round and the choice of user(ODD or EVEN)
-                                 // when the level is medium
+      // when the level is medium
     }
 
     String countNewGameString = String.valueOf(countRound); // Change integer to string
@@ -65,6 +67,14 @@ public class Game {
     int aiNumberInt = Integer.parseInt(aiNumberString);
     MessageCli.PRINT_INFO_HAND.printMessage(userName, inputValue);
     MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", aiNumberString);
+
+    // save the previous values that the user typed.  AI can only get the values of the previous
+    // rounds
+    if (inputInt % 2 == 0) {
+      countEven++;
+    } else {
+      countOdd++;
+    }
 
     int sum = aiNumberInt + inputInt; // sum of the user and the saved ai created values;
     // if the sum is even, else is when the sum is odd
