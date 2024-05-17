@@ -26,7 +26,10 @@ public class Hard implements GameLevel {
    */
   @Override
   public String play() {
+    // After the initial three round,
     if (currentRound > 3) {
+      // if the system lose for the previous round, change the method. Random to Top strategy, or
+      // Top strategy to random.
       if (loserOrWin) {
         strategy =
             (strategy instanceof Random)
@@ -34,6 +37,8 @@ public class Hard implements GameLevel {
                 : new Random();
       }
     }
+
+    // Return the string value of the random number produced by using appropriate mode
     this.randomNumber = strategy.randomNumber();
     return String.valueOf(randomNumber);
   }
