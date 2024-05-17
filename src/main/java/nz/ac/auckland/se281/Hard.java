@@ -21,10 +21,8 @@ public class Hard implements GameLevel {
   }
 
   /**
-   * Produce a random number by using the 'Random' mode and 'Top Strategy' mode in the strategy
-   * interface. The first 3 rounds will use the Random mode. After the 3 rounds, the mode will
-   * change based on the previous mode that the system used and whether the system lost or won by
-   * using that method.
+   * After the initial three rounds, the mode should be change based on the previous round result.
+   * When the system lose, and the strategy was random, switch to the top strategy. Vice versa.
    */
   @Override
   public String play() {

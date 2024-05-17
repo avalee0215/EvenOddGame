@@ -20,9 +20,8 @@ public class Medium implements GameLevel {
   }
 
   /**
-   * Produce a random number by using the 'Random' mode and 'Top Strategy' mode in the strategy
-   * interface. The first 3 rounds will use the Random mode. After the 3 rounds, the mode will use
-   * the Top Strategy mode.
+   * After the initial three rounds, the mode should be change, the mode should change to the Top
+   * Stratety.
    */
   @Override
   public String play() {
