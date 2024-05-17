@@ -14,6 +14,11 @@ public class Medium implements GameLevel {
   private int countEven;
   private int randomNumber;
 
+  /** For the initial three rounds, set the strategy I am using is the random mode. */
+  public Medium() {
+    strategy = new Random();
+  }
+
   /**
    * Produce a random number by using the 'Random' mode and 'Top Strategy' mode in the strategy
    * interface. The first 3 rounds will use the Random mode. After the 3 rounds, the mode will use
@@ -21,17 +26,12 @@ public class Medium implements GameLevel {
    */
   @Override
   public String play() {
-    if (currentRound < 4) {
-      strategy = new Random();
-      this.randomNumber = strategy.randomNumber(); // First 3 rounds should use the random mode
-      return String.valueOf(randomNumber);
-    } else {
-      strategy = new TopStrategy();
-      strategy.oddorEven(countOdd, countEven, userChoice); // Update the current values
-      this.randomNumber = strategy.randomNumber();
-
-      return String.valueOf(randomNumber);
+    if (currentRound > 3) {
+      strategy = new TopStrategy(countOdd, countEven, userChoice);
     }
+    this.randomNumber = strategy.randomNumber();
+
+    return String.valueOf(randomNumber);
   }
 
   /**
