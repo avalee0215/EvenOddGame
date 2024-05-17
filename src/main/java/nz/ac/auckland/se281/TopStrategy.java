@@ -46,7 +46,7 @@ public class TopStrategy implements Strategies {
           "ODD"; // If the user used odd numbers more than the even number, save it "odd". This
       // value will be useful in the randomNumber.
 
-    } else {
+    } else if (odd < even) {
       this.oddorEven =
           "EVEN"; // If the user used even numbers more than the even number, save it "even".
     }
