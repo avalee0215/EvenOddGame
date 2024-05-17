@@ -35,27 +35,22 @@ public class TopStrategy implements Strategies {
     if (oddorEven == "ODD") {
       // To win, the sum should be even
       if (userChoice == "ODD") {
-        System.out.println("top-odd");
         return Utils
             .getRandomOddNumber(); // odd + odd  = even. Therefore, the random number should be odd
       } else {
         // To win, the sum should be odd
-        System.out.println("top-even");
         return Utils
             .getRandomEvenNumber(); // odd + even = odd. So, the random number should be even
       }
     } else if (oddorEven == "EVEN") {
       // To win, the sum should be odd
       if (userChoice == "EVEN") {
-        System.out.println("top-odd");
         return Utils.getRandomOddNumber(); // even + odd = even. So, the random number should be odd
       } else {
         // To win, the sum should be even
-        System.out.println("top-even");
         return Utils.getRandomEvenNumber(); // even + even = even. So, the random number is even
       }
     } else {
-      System.out.println("random");
       return Utils.getRandomNumberRange(0, 5); // Same EVEN and ODD numbers will use the Random mode
     }
   }
